@@ -3,3 +3,6 @@ git status: shows status
 git add .: adds current
 git touch: creates file
 git checkout (branch): moves to branch
+git remote: shows remote repositry
+git remote add origin http.....: adds repo to git hub
+git push -u origin master: pushes master branch to the repo
