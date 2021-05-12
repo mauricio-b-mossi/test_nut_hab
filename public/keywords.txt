@@ -1,0 +1,5 @@
+git merge (name of branch to merge)
+git status: shows status
+git add .: adds current
+git touch: creates file
+git checkout (branch): moves to branch
