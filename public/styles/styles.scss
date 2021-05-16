@@ -415,6 +415,33 @@ nav {
   margin: 0;
 }
 
+// LOGIN FORM
+.form_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 72vh;
+  width: 100%;
+  ;
+}
+.form_container div{
+  text-align: center;
+}
+
+.btn-submit{
+  background-color: $navFontColor;
+  margin-top: 1rem;
+  border: 1px;
+  border-radius: 10px;
+  transition-duration: 250ms;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+.btn-submit:hover{
+  background-color: rgb(50, 116, 186);
+}
+
 
 
 // FOOTER

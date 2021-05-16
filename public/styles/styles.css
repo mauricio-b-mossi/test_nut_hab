@@ -419,6 +419,43 @@ nav {
   margin: 0;
 }
 
+.form_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 72vh;
+  width: 100%;
+}
+
+.form_container div {
+  text-align: center;
+}
+
+.btn-submit {
+  background-color: #1a2a60;
+  margin-top: 1rem;
+  border: 1px;
+  border-radius: 10px;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+.btn-submit:hover {
+  background-color: #3274ba;
+}
+
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;

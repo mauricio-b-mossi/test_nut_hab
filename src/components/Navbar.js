@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {Link} from 'react-router-dom'
+import { Context } from '../helper/Context';
 
 const Navbar = () => {
 
@@ -45,7 +46,9 @@ const Navbar = () => {
         });
         burger.classList.toggle("toggle");
         
-    }
+  }
+  
+  const{isAdmin} = useContext(Context)
 
     return (
       <nav>
@@ -74,10 +77,23 @@ const Navbar = () => {
               Articles
             </Link>
           </li>
+          {isAdmin && (
+            <li>
+              {/* <a href="#">Work</a> */}
+              <Link to="/articles/create" className="a_tag">
+                Create Articles
+              </Link>
+            </li>
+          )}
           <li>
             <a href="#" className="a_tag">
               Our Project
             </a>
+          </li>
+          <li>
+            <Link to="/auth" className="a_tag">
+              Sign In
+            </Link>
           </li>
         </ul>
         <div className="burger" onClick={toggleBurger}>
