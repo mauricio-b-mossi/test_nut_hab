@@ -382,10 +382,13 @@ nav {
   background: white;
   border-radius: 20px;
   transition: 0.3s;
+  display: grid;
+  grid-template-rows: 220px 1fr;
   // margin-top: 2rem;
   // margin-bottom: 2rem;
   // margin-top: 2rem;
 }
+
 .article_card:hover{
   box-shadow: 0 4px 20px 0 rgba(34, 68, 123, 0.2);
   cursor: pointer;

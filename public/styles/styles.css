@@ -385,6 +385,10 @@ nav {
   border-radius: 20px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 220px 1fr;
+      grid-template-rows: 220px 1fr;
 }
 
 .article_card:hover {

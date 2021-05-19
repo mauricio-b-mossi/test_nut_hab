@@ -29,17 +29,17 @@ const Articles = () => {
   }, []);
 
   if (!allPosts) {
-    return <div>Loading...</div>
+    return <div style={{height: '92vh', display: 'flex', justifyContent: 'center', alignItems: 'center',}}>Error 404</div>
   }
   
   return (
     <div className="article_section_body">
       <div className="site_container">
         <div className="article_container">
-          {console.log(allPosts)}
+          {/* {console.log(allPosts)} */}
           {allPosts &&
             allPosts.map((post, index) => (
-              <Link to={`/${post.slug}`} key={index} style={{textDecoration: 'none'}}>
+              <Link to={`/${post.slug.current}`} key={index} style={{textDecoration: 'none'}}>
                 <article className="article_card">
                   <figure className="article_image">
                     <img
