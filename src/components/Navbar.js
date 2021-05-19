@@ -72,28 +72,14 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            {/* <a href="#">Work</a> */}
             <Link to="/articles" className="a_tag">
               Articles
             </Link>
           </li>
-          {isAdmin && (
-            <li>
-              {/* <a href="#">Work</a> */}
-              <Link to="/articles/create" className="a_tag">
-                Create Articles
-              </Link>
-            </li>
-          )}
           <li>
             <a href="#" className="a_tag">
               Our Project
             </a>
-          </li>
-          <li>
-            <Link to="/auth" className="a_tag">
-              Sign In
-            </Link>
           </li>
         </ul>
         <div className="burger" onClick={toggleBurger}>
