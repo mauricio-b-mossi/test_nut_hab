@@ -15,6 +15,7 @@ $textFont: 'Quicksand', sans-serif;
 // THE OG TRICK TO HIDE PHONE OVERFLOW
 html, body {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 body {
   position: relative;
@@ -43,6 +44,7 @@ nav {
   align-items: center;
   min-height: 8vh;
   background-color: $navcolor;
+  
   
 }
 
@@ -79,6 +81,9 @@ nav {
   grid-area: b;
   display: flex;
   justify-content: space-around;
+  overflow: hidden;
+
+  
   
   /* width: 30%; */
 }
@@ -87,6 +92,9 @@ nav {
   list-style: none;
   transition: all 1s ease-in;
   text-transform: uppercase;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding-right: 1rem;
 //   padding: 5rem;
 //   border: 1px solid black;
   
@@ -104,6 +112,7 @@ nav {
   letter-spacing: 0.1rem;
   // font-weight: bold;
   font-size: $font_secondary_li;
+  
 
 }
 // .nav-links a {
@@ -170,6 +179,7 @@ nav {
  
   height: 92vh;
   width: 100%;
+  // background-image: url('/images/nuhacover.jpeg');
   background-image: url('/images/diabetic-background.jpg');
   // background-image: url('/images/light\ blue\ paper\ strip.jpg');
   background-repeat: no-repeat;
@@ -209,13 +219,19 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 5rem 0 5rem;
+  align-items: center;
+  // max-width: 200px;
+  margin: 0rem 5rem 0 5rem;
+  
 }
 
 .right_div div{
   font-family: $textFont;
   // padding-left: 5rem;
   text-align: center;
+  max-width: 400px;
+  
+  
 }
 
 .right_big{
@@ -229,9 +245,18 @@ nav {
   font-size: $font_secondary;
   margin-bottom: 2rem;
 }
+
+.mision{
+  margin-top: 2rem;
+}
 .right_small{
   font-size: $font_third;
   line-height: 2rem;
+  font-family: $textFont;
+  margin-bottom: 2rem;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
   // margin-bottom: 3rem;
 }
 
@@ -280,13 +305,13 @@ nav {
 
 .section_white{
   // padding: 5rem;
-  height: 70vh;
+  height: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  text-align: center;
   
- 
 }
 .section_white_about{
   // padding: 5rem;
@@ -296,20 +321,32 @@ nav {
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   align-items: center;
   justify-content: space-around;
+  
 
+}
+
+.block{
+  
 }
 
 .about_left_div{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 5rem 0 5rem;
+  align-items: center;
+  // margin: 0 5rem 0 5rem;
+  width: 100%; 
+}
+
+.width_wrapper{
+  max-width: 400px;
 }
 
 .about_left_div div{
   font-family: $textFont;
   // padding-left: 5rem;
   text-align: center;
+  
 }
 
 .about_left_big{
@@ -326,6 +363,7 @@ nav {
 .about_left_small{
   font-size: $font_third;
   line-height: 2rem;
+  
 }
 
 .about_right_div{
@@ -336,7 +374,7 @@ nav {
 .about_right_div img{
   padding: 5rem;
   max-width: 80%;
-  object-fit: cover;
+  // object-fit: cover;
   // height: 600px;
   // width: 461;
 }
@@ -353,6 +391,7 @@ nav {
   // background-color: #B2D8F4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: greyscale;
+  
   
 }
 
@@ -453,6 +492,7 @@ nav {
   align-items: center;
   justify-content: space-around;
   min-height: 20vh;
+  margin-top: 4rem;
 }
 
 .contact_us{
@@ -610,6 +650,7 @@ nav {
 
 .nav-active {
   transform: translateX(0%);
+  overflow-y: hidden;
 }
 
 

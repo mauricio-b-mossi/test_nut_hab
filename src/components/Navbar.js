@@ -51,7 +51,7 @@ const Navbar = () => {
   const{isAdmin} = useContext(Context)
 
     return (
-      <nav>
+      <nav className='themainnav'>
         <div className="logo">
           {/* <h4>The nav</h4> */}
           <img src="/images/FUNUHA.png" alt="" className="img_logo" />
@@ -67,7 +67,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <a href="#" className="a_tag">
+            <a href="/#about_page" className="a_tag">
               About
             </a>
           </li>

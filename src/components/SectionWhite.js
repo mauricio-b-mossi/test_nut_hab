@@ -1,25 +1,72 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import sanityClient from "../client.js";
+// To display markdown
+import BlockContent from "@sanity/block-content-to-react";
+// To display images
+import imageUrlBuilder from "@sanity/image-url";
+import { Link } from "react-router-dom";
 
 const SectionWhite = () => {
-    return (
-      <>
-        <div className="section_white">
-          <div className="right_div">
-            <div className="right_big">Lorem Ipsum</div>
-            <div className="right_medium">Lorem Ipsum</div>
-            <div className="right_small">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem
-              cumque libero, quae impedit, saepe maiores quam culpa sed commodi
-              deleniti numquam repudiandae tenetur soluta. Facilis aperiam omnis
-              magni vero quisquam.
+
+  const builder = imageUrlBuilder(sanityClient);
+
+  const [misionVision, setMisionVision] = useState(null)
+
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        `*[_type == "misionVision"]{
+              mision,
+              vision,
+              mainImage{
+                    asset->{
+                        _id,
+                        url
+                    },
+                },
+      }`
+      )
+      .then((data) => setMisionVision(data[0]))
+      .catch(console.error);
+  }, []);
+
+  function urlFor(source) {
+    return builder.image(source);
+  }
+    
+
+  return (
+    <>
+      {misionVision && (
+        <>
+          <div className="section_white">
+            <div className="right_div">
+              {/* <div className="right_big">Lorem Ipsum</div> */}
+              <div className="right_medium mision">Misión</div>
+              <div className="right_small">{misionVision.mision}</div>
+              {/* <BlockContent
+                className="right_small"
+                blocks={misionVision.mision}
+              /> */}
+              <div className="right_medium">Visión</div>
+              <div className="right_small">{misionVision.vision}</div>
+              {/* <BlockContent
+                className="right_small"
+                blocks={misionVision.vision}
+              /> */}
+            </div>
+            <div className="left_div">
+              {/* <img src="/images/happy-person.png" alt="" /> */}
+              <img
+                src={urlFor(misionVision.mainImage.asset.url).width(400)}
+                alt="Misión y Visión"
+              />
             </div>
           </div>
-          <div className="left_div">
-            <img src="/images/happy-person.png" alt="" />
-          </div>
-        </div>
-      </>
-    );
-}
+        </>
+      )}
+    </>
+  );
+};
 
 export default SectionWhite;
