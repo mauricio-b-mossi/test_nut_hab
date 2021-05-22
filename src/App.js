@@ -17,7 +17,7 @@ function App() {
       <Navbar />
       <Route exact path="/" component={HomeBody} />
       <Route exact path="/articles" component={Articles} />
-      <Route exact path="/articles/:slug" component={OnePost} />
+      <Route exact path="/:slug" component={OnePost} />
       <Footer />
     </Router>
   );

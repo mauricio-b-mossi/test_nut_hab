@@ -203,7 +203,6 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0rem 5rem 0 5rem;
 }
 
 .right_div div {
@@ -326,7 +325,8 @@ nav {
 }
 
 .width_wrapper {
-  max-width: 400px;
+  max-width: 600px;
+  text-align: center;
 }
 
 .about_left_div div {
@@ -445,6 +445,21 @@ nav {
   margin: 0;
 }
 
+.post_title {
+  color: #22447b;
+  font-size: 2rem;
+  margin: 2rem 0;
+}
+
+.post_body {
+  color: black;
+  font-size: 1rem;
+  margin: 2rem 0;
+  text-align: start;
+  line-height: 2rem;
+  font-family: "Quicksand", sans-serif;
+}
+
 .form_container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -480,6 +495,23 @@ nav {
 
 .btn-submit:hover {
   background-color: #3274ba;
+}
+
+.individual_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 92vh;
 }
 
 .footer {
@@ -554,7 +586,7 @@ nav {
 }
 
 .boring_stuff p {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 0.8rem;
 }
 
@@ -564,7 +596,7 @@ nav {
 }
 
 .contact_info {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 0.8rem;
 }
 
@@ -573,6 +605,12 @@ nav {
   /* hides overlapping things */
   body {
     overflow-x: hidden;
+  }
+  .width_wrapper {
+    max-width: 400px;
+  }
+  .img_article_size {
+    max-width: 400px;
   }
   .nav-links {
     position: absolute;
@@ -682,11 +720,10 @@ nav {
     width: 30px;
   }
   .contact_field {
-    font-weight: 400;
     font-size: 0.8rem;
   }
   .contact_info {
-    font-weight: 300;
+    font-weight: 400;
     font-size: 0.8rem;
   }
   .boring_stuff {
@@ -706,6 +743,30 @@ nav {
 @media screen and (max-width: 1000px) {
   .site_container {
     max-width: 1156px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .width_wrapper {
+    max-width: 300px;
+  }
+  .right_div div {
+    max-width: 300px;
+  }
+  .img_article_size {
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .width_wrapper {
+    max-width: 200px;
+  }
+  .right_div div {
+    max-width: 200px;
+  }
+  .img_article_size {
+    max-width: 200px;
   }
 }
 
