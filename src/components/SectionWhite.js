@@ -41,19 +41,25 @@ const SectionWhite = () => {
         <>
           <div className="section_white">
             <div className="right_div">
-              {/* <div className="right_big">Lorem Ipsum</div> */}
-              <div className="right_medium mision">Misión</div>
-              <div className="right_small">{misionVision.mision}</div>
-              {/* <BlockContent
+              <div className="width_wrapper">
+                {/* <div className="right_big">Lorem Ipsum</div> */}
+                <div className="right_medium mision">Misión</div>
+                <div className="right_small">
+                  <BlockContent blocks={misionVision.mision} />
+                </div>
+                {/* <BlockContent
                 className="right_small"
                 blocks={misionVision.mision}
               /> */}
-              <div className="right_medium">Visión</div>
-              <div className="right_small">{misionVision.vision}</div>
-              {/* <BlockContent
+                <div className="right_medium">Visión</div>
+                <div className="right_small">
+                  <BlockContent blocks={misionVision.vision} />
+                </div>
+                {/* <BlockContent
                 className="right_small"
                 blocks={misionVision.vision}
               /> */}
+              </div>
             </div>
             <div className="left_div">
               {/* <img src="/images/happy-person.png" alt="" /> */}

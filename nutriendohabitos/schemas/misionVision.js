@@ -2,23 +2,21 @@ export default {
   name: "misionVision",
   title: "Misión & Visión",
   type: "document",
-    fields: [
-        
+  fields: [
     {
-
-    name: 'title',
-    title: 'Title',
-    type: 'string'
+      name: "title",
+      title: "Title",
+      type: "string",
     },
     {
       name: "mision",
       title: "Misión",
-      type: "string",
+      type: "blockContent",
     },
     {
       name: "vision",
       title: "Visión",
-      type: "string",
+      type: "blockContent",
     },
     {
       name: "mainImage",

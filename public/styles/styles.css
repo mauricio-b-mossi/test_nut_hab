@@ -203,12 +203,11 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
 }
 
 .right_div div {
   font-family: "Quicksand", sans-serif;
-  text-align: center;
-  max-width: 400px;
 }
 
 .right_big {
@@ -230,6 +229,8 @@ nav {
   line-height: 2rem;
   font-family: "Quicksand", sans-serif;
   margin-bottom: 2rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .left_div {
@@ -288,10 +289,8 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .section_white_about {
@@ -325,7 +324,7 @@ nav {
 }
 
 .width_wrapper {
-  max-width: 600px;
+  padding: 0 5%;
   text-align: center;
 }
 
@@ -348,6 +347,7 @@ nav {
 .about_left_small {
   font-size: 1rem;
   line-height: 2rem;
+  max-width: 700px;
 }
 
 .about_right_div {
@@ -364,7 +364,9 @@ nav {
 
 .about_right_div img {
   padding: 5rem;
-  max-width: 80%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .article_section_body {
@@ -411,6 +413,7 @@ nav {
   display: grid;
   -ms-grid-rows: 220px 1fr;
       grid-template-rows: 220px 1fr;
+  margin: 0 5%;
 }
 
 .article_card:hover {
@@ -512,6 +515,7 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   min-height: 92vh;
+  width: 100%;
 }
 
 .footer {
@@ -590,6 +594,10 @@ nav {
   font-size: 0.8rem;
 }
 
+.asadi_logo {
+  width: 50px;
+}
+
 .contact_field {
   font-weight: 400;
   font-size: 0.8rem;
@@ -605,9 +613,6 @@ nav {
   /* hides overlapping things */
   body {
     overflow-x: hidden;
-  }
-  .width_wrapper {
-    max-width: 400px;
   }
   .img_article_size {
     max-width: 400px;
@@ -746,27 +751,27 @@ nav {
   }
 }
 
-@media screen and (max-width: 500px) {
-  .width_wrapper {
+@media screen and (max-width: 450px) {
+  .right_div div {
     max-width: 300px;
   }
-  .right_div div {
+  .internal_wrapper {
     max-width: 300px;
   }
   .img_article_size {
     max-width: 300px;
+  }
+  .img_logo {
+    margin: 0;
   }
 }
 
-@media screen and (max-width: 400px) {
-  .width_wrapper {
-    max-width: 200px;
-  }
-  .right_div div {
-    max-width: 200px;
+@media screen and (max-width: 350px) {
+  .internal_wrapper {
+    max-width: 250px;
   }
   .img_article_size {
-    max-width: 200px;
+    max-width: 250px;
   }
 }
 

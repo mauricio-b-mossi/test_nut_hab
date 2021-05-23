@@ -220,6 +220,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
   // max-width: 200px;
   // margin: 0rem 5rem 0 5rem;
   
@@ -228,8 +229,9 @@ nav {
 .right_div div{
   font-family: $textFont;
   // padding-left: 5rem;
-  text-align: center;
-  max-width: 400px;
+  // text-align: center;
+  // max-width: 200px;
+  
   
   
 }
@@ -254,6 +256,7 @@ nav {
   line-height: 2rem;
   font-family: $textFont;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
   // display: flex;
   // justify-content: center;
   // align-items: center;
@@ -264,9 +267,12 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+ 
 }
 .left_div img{
+  
   padding: 5rem;
+  // width: 200px;
 }
 
 // FRUIT BACKGROUND
@@ -309,8 +315,8 @@ nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: space-around;
+  // text-align: center;
   
 }
 .section_white_about{
@@ -339,7 +345,8 @@ nav {
 }
 
 .width_wrapper{
-  max-width: 600px;
+  // max-width: 600px;
+  padding: 0 5%;
   text-align: center;
 }
 
@@ -364,6 +371,7 @@ nav {
 .about_left_small{
   font-size: $font_third;
   line-height: 2rem;
+  max-width: 700px;
   
 }
 
@@ -374,7 +382,8 @@ nav {
 }
 .about_right_div img{
   padding: 5rem;
-  max-width: 80%;
+  // max-width: 80%;
+  width: fit-content;
   // object-fit: cover;
   // height: 600px;
   // width: 461;
@@ -424,6 +433,7 @@ nav {
   transition: 0.3s;
   display: grid;
   grid-template-rows: 220px 1fr;
+  margin: 0 5%;
   // margin-top: 2rem;
   // margin-bottom: 2rem;
   // margin-top: 2rem;
@@ -509,6 +519,7 @@ nav {
   justify-content: center;
   align-items: center;
   min-height: 92vh;
+  width:  100%;
 }
 
 
@@ -553,6 +564,11 @@ nav {
   font-size: 0.8rem;
 }
 
+.asadi_logo{
+  width: 50px;
+
+}
+
 .contact_field{
   font-weight: 400;
   font-size: 0.8rem;
@@ -571,10 +587,10 @@ nav {
     overflow-x: hidden;
   }
 
-  .width_wrapper{
-  max-width: 400px;
+//   .width_wrapper{
+//   max-width: 400px;
   
-}
+// }
 .img_article_size{
   max-width: 400px;
 }
@@ -681,28 +697,62 @@ nav {
     max-width: 1156px;
   }
 }
-@media screen and (max-width: 500px) {
-  .width_wrapper{
-    max-width: 300px;
-  }
+// @media screen and (max-width: 500px) {
+//   .width_wrapper{
+//     max-width: 300px;
+//   }
+//   .right_div div{
+//     max-width: 300px;
+//   }
+//   .img_article_size{
+//     max-width: 300px;
+//   }
+// }
+// @media screen and (max-width: 400px) {
+//   .width_wrapper{
+//     max-width: 200px;
+//   }
+//   .right_div div{
+//     max-width: 200px;
+//   }
+//   .img_article_size{
+//     max-width: 200px;
+//   }
+// }
+
+@media screen and (max-width: 450px) {
   .right_div div{
     max-width: 300px;
   }
+
+  .internal_wrapper{
+    max-width: 300px;
+  }
+
   .img_article_size{
     max-width: 300px;
   }
+
+  .img_logo{
+    margin: 0;
+  }
+  
 }
-@media screen and (max-width: 400px) {
-  .width_wrapper{
-    max-width: 200px;
+
+@media screen and (max-width: 350px) {
+
+
+  .internal_wrapper{
+    max-width: 250px;
   }
-  .right_div div{
-    max-width: 200px;
-  }
+
   .img_article_size{
-    max-width: 200px;
+    max-width: 250px;
   }
+
+  
 }
+
 
 
 .nav-active {

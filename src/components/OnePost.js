@@ -39,20 +39,31 @@ const OnePost = () => {
 
     if (!post) {
         return (
-            <div>Loading</div>
+            <div></div>
         )
     }
 
     return (
       <div className="individual_container">
-        <div className="width_wrapper">
-          {post && (<> <div className="post_title">{post.title}</div>
-          <img
-                src={urlFor(post.mainImage.asset.url).width(600)}
-                alt="Article Image" className='img_article_size'
-              />
-        <BlockContent blocks={post.body} className='post_body'/>
-          </>)}
+        <div className="about_left_div">
+          <div className="width_wrapper">
+            {post && (
+              <>
+                {" "}
+                <div className="internal_wrapper">
+                  <div className="post_title">{post.title}</div>
+                  <img
+                    src={urlFor(post.mainImage.asset.url).width(600)}
+                    alt="Article Image"
+                    className="img_article_size"
+                  />
+                  <div className="about_left_small">
+                    <BlockContent blocks={post.body} className="post_body" />
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
         </div>
       </div>
     );

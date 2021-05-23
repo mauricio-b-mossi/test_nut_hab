@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../client.js";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
-const Articles = () => {
-
+const Recepies = () => {
   const [allPosts, setAllPosts] = useState(null);
 
   useEffect(() => {
@@ -11,7 +10,7 @@ const Articles = () => {
     //   *=all _type=from the type == ()]{what to pull in}
     sanityClient
       .fetch(
-        `*[_type == "post"]{
+        `*[_type == "recepies"]{
                 title,
                 description,
                 slug,
@@ -29,9 +28,18 @@ const Articles = () => {
   }, []);
 
   if (!allPosts) {
-    return <div style={{height: '92vh', display: 'flex', justifyContent: 'center', alignItems: 'center',}}></div>
+    return (
+      <div
+        style={{
+          height: "92vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      ></div>
+    );
   }
-  
+
   return (
     <div className="article_section_body">
       <div className="site_container">
@@ -39,7 +47,11 @@ const Articles = () => {
           {/* {console.log(allPosts)} */}
           {allPosts &&
             allPosts.map((post, index) => (
-              <Link to={`/${post.slug.current}`} key={index} style={{textDecoration: 'none'}}>
+              <Link
+                to={`/${post.slug.current}`}
+                key={index}
+                style={{ textDecoration: "none" }}
+              >
                 <article className="article_card">
                   <figure className="article_image">
                     <img
@@ -48,22 +60,17 @@ const Articles = () => {
                     />
                   </figure>
                   <div className="article_content">
-                    <div className="card_category">
-                      {post.categories}
-                    </div>
-                    <h3 className="card_title">{ post.title }</h3>
-                    <p className="card_excerpt">
-                      {post.description}
-                    </p>
+                    <div className="card_category">{post.categories}</div>
+                    <h3 className="card_title">{post.title}</h3>
+                    <p className="card_excerpt">{post.description}</p>
                   </div>
                 </article>
               </Link>
-  ))}
-         
+            ))}
         </div>
       </div>
     </div>
   );
 };
 
-export default Articles;
+export default Recepies;

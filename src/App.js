@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Articles from './components/Articles'
 import { Context } from './helper/Context'
 import OnePost from './components/OnePost'
+import Recepies from './components/Recepies'
 
 function App() {
 
@@ -16,8 +17,9 @@ function App() {
     <Router>
       <Navbar />
       <Route exact path="/" component={HomeBody} />
-      <Route exact path="/articles" component={Articles} />
+      <Route exact path="/articulos" component={Articles} />
       <Route exact path="/:slug" component={OnePost} />
+      <Route exact path='/recetas' component={ Recepies }/>
       <Footer />
     </Router>
   );
