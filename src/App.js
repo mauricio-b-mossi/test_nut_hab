@@ -4,7 +4,6 @@ import HomeBody from './components/HomeBody'
 import Footer from './components/Footer'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Articles from './components/Articles'
-import { Context } from './helper/Context'
 import OnePost from './components/OnePost'
 import Recepies from './components/Recepies'
 
