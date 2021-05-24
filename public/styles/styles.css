@@ -225,10 +225,10 @@ nav {
 }
 
 .right_small {
+  padding: 5%;
   font-size: 1rem;
   line-height: 2rem;
   font-family: "Quicksand", sans-serif;
-  margin-bottom: 2rem;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -246,7 +246,7 @@ nav {
 }
 
 .left_div img {
-  padding: 5rem;
+  padding: 0 5%;
 }
 
 .healthy_bk {
@@ -330,7 +330,6 @@ nav {
 
 .about_left_div div {
   font-family: "Quicksand", sans-serif;
-  text-align: center;
 }
 
 .about_left_big {
@@ -347,7 +346,13 @@ nav {
 .about_left_small {
   font-size: 1rem;
   line-height: 2rem;
-  max-width: 700px;
+  max-width: 500px;
+}
+
+.about_left_small_one {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  max-width: 600px;
 }
 
 .about_right_div {
@@ -363,7 +368,7 @@ nav {
 }
 
 .about_right_div img {
-  padding: 5rem;
+  padding: 5% 5% 0;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -461,6 +466,22 @@ nav {
   text-align: start;
   line-height: 2rem;
   font-family: "Quicksand", sans-serif;
+}
+
+.text_center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .form_container {
@@ -743,11 +764,21 @@ nav {
     -ms-grid-rows: 220px 1fr;
         grid-template-rows: 220px 1fr;
   }
-}
-
-@media screen and (max-width: 1000px) {
   .site_container {
     max-width: 1156px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .left_div img {
+    padding: 0 5% 5%;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .section_white_about {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
 }
 
@@ -763,6 +794,15 @@ nav {
   }
   .img_logo {
     margin: 0;
+  }
+  .about_right_div img {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .left_div img {
+    padding: 0 5%;
   }
 }
 

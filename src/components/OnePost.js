@@ -57,8 +57,10 @@ const OnePost = () => {
                     alt="Article Image"
                     className="img_article_size"
                   />
-                  <div className="about_left_small">
-                    <BlockContent blocks={post.body} className="post_body" />
+                  <div className="text_center">
+                    <div className="about_left_small_one">
+                      <BlockContent blocks={post.body} className="post_body" />
+                    </div>
                   </div>
                 </div>
               </>

@@ -9,13 +9,8 @@ export default {
       type: "string",
     },
     {
-      name: "mision",
-      title: "Misión",
-      type: "blockContent",
-    },
-    {
-      name: "vision",
-      title: "Visión",
+      name: "body",
+      title: "Body",
       type: "blockContent",
     },
     {

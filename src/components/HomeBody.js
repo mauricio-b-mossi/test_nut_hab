@@ -10,7 +10,7 @@ const HomeBody = () => {
         <Hero />
         <SectionWhite />
         <HealthyBk />
-        <SectionWhiteAbout />
+          <SectionWhiteAbout/>
       </>
     );
 }

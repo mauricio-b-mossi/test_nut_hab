@@ -2,6 +2,7 @@ import React, {useContext} from 'react'
 import {Link} from 'react-router-dom'
 import { Context } from '../helper/Context';
 
+
 const Navbar = () => {
 
     const toggleBurger = () => {
@@ -54,7 +55,9 @@ const Navbar = () => {
       <nav className="themainnav">
         <div className="logo">
           {/* <h4>The nav</h4> */}
-          <img src="/images/FUNUHA.png" alt="" className="img_logo" />
+          <a href="/">
+            <img src="/images/FUNUHA.png" alt="" className="img_logo" />
+          </a>
           <div className="title">
             <span className="title_nutriendo">Nutriendo</span>
             <span className="title_habitos">hábitos</span>
@@ -76,11 +79,11 @@ const Navbar = () => {
               Recetas
             </Link>
           </li>
-          <li>
-            <a href="/#about_page" className="a_tag">
+          {/* <li>
+            <Link href="/#about_page" className="a_tag">
               Nosotros
-            </a>
-          </li>
+            </Link>
+          </li> */}
         </ul>
         <div className="burger" onClick={toggleBurger}>
           <div className="line1" />
@@ -90,5 +93,7 @@ const Navbar = () => {
       </nav>
     );
 }
+
+  
 
 export default Navbar

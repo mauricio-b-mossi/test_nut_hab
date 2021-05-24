@@ -252,10 +252,10 @@ nav {
   margin-top: 2rem;
 }
 .right_small{
+  padding: 5%;
   font-size: $font_third;
   line-height: 2rem;
   font-family: $textFont;
-  margin-bottom: 2rem;
   flex-wrap: wrap;
   // display: flex;
   // justify-content: center;
@@ -271,7 +271,7 @@ nav {
 }
 .left_div img{
   
-  padding: 5rem;
+  padding: 0 5%;
   // width: 200px;
 }
 
@@ -324,6 +324,7 @@ nav {
   // height: 100vh;
   height: auto;
   display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   align-items: center;
   justify-content: space-around;
@@ -353,7 +354,7 @@ nav {
 .about_left_div div{
   font-family: $textFont;
   // padding-left: 5rem;
-  text-align: center;
+  // text-align: center;
   
 }
 
@@ -371,8 +372,13 @@ nav {
 .about_left_small{
   font-size: $font_third;
   line-height: 2rem;
-  max-width: 700px;
+  max-width: 500px;
   
+}
+.about_left_small_one{
+  font-size: $font_secondary;
+  line-height: 2rem;
+  max-width: 600px;
 }
 
 .about_right_div{
@@ -381,7 +387,7 @@ nav {
   align-items: center;
 }
 .about_right_div img{
-  padding: 5rem;
+  padding: 5% 5% 0;
   // max-width: 80%;
   width: fit-content;
   // object-fit: cover;
@@ -483,6 +489,13 @@ nav {
   text-align: start;
   line-height: 2rem;
   font-family: $textFont;
+}
+
+.text_center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 // LOGIN FORM
@@ -691,12 +704,27 @@ nav {
   grid-template-rows: 220px 1fr;
 
 }
-}
-@media screen and (max-width: 1000px){
-  .site_container{
+.site_container{
     max-width: 1156px;
   }
 }
+
+  
+
+@media screen and (max-width: 960px){
+  .left_div img{
+    padding: 0 5% 5%;
+  }
+ 
+}
+@media screen and (max-width: 890px){
+  .section_white_about{
+    //  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-template-columns: 1fr;
+  }
+ 
+}
+
 // @media screen and (max-width: 500px) {
 //   .width_wrapper{
 //     max-width: 300px;
@@ -736,7 +764,17 @@ nav {
   .img_logo{
     margin: 0;
   }
+  .about_right_div img{
+    width: 300px;
+    
+  }
   
+  
+}
+@media screen and (max-width: 400px){
+  .left_div img{
+    padding: 0 5%;
+  }
 }
 
 @media screen and (max-width: 350px) {

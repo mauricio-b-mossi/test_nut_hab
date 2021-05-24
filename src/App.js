@@ -18,8 +18,9 @@ function App() {
       <Route exact path="/" component={HomeBody} />
       <Route exact path="/articulos" component={Articles} />
       <Route exact path="/:slug" component={OnePost} />
-      <Route exact path='/recetas' component={ Recepies }/>
-      <Footer />
+      <Route exact path="/recetas" component={Recepies} />
+        <Footer />
+      
     </Router>
   );
 }
