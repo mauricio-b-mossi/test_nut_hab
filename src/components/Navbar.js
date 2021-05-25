@@ -66,17 +66,17 @@ const Navbar = () => {
         <ul className="nav-links" onClick={hideNav}>
           <li>
             <Link to="/" className="a_tag">
-              Inicio
+              Home
             </Link>
           </li>
           <li>
             <a href="/articulos" className="a_tag">
-              Artículos
+              Articles
             </a>
           </li>
           <li>
             <Link to="/recetas" className="a_tag">
-              Recetas
+              Recepies
             </Link>
           </li>
           {/* <li>
