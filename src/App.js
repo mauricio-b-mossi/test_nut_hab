@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Articles from './components/Articles'
 import OnePost from './components/OnePost'
 import Recepies from './components/Recepies'
+import MailingList from './components/MailingList'
 
 function App() {
 
@@ -19,7 +20,8 @@ function App() {
       <Route exact path="/articulos" component={Articles} />
       <Route exact path="/:slug" component={OnePost} />
       <Route exact path="/recetas" component={Recepies} />
-        <Footer />
+      <MailingList/>
+        {/* <Footer /> */}
       
     </Router>
   );

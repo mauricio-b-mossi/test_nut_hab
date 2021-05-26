@@ -629,6 +629,113 @@ nav {
   font-size: 0.8rem;
 }
 
+.footer_dos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 4rem;
+  min-height: 20vh;
+}
+
+.wrapper_footer {
+  width: 100%;
+}
+
+.logo_footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.img_logo_footer {
+  height: 6vh;
+}
+
+.logo_footer .title {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.top_footer_div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.form_center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mailing_input {
+  background-color: #f0f4fb;
+  border: 1px solid #f0f4fb;
+  border-bottom: 1px solid #1a2a60;
+  margin-right: 0.5rem;
+}
+
+.mailing_input:focus {
+  outline: none;
+}
+
+.btn_primary {
+  background-color: #1a2a60;
+  border: 0;
+  color: #f0f4fb;
+  padding: 1px 3px;
+}
+
+.btn_primary:hover {
+  background-color: red;
+}
+
+form div {
+  color: #22447b;
+  margin: 1rem 0 0.5rem 0;
+  font-size: 0.8rem;
+}
+
+.info_below {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.follow_us {
+  margin-bottom: 1rem;
+}
+
+.follow_us_footer {
+  color: #22447b;
+  margin: 1.5rem 0 0.5rem 0;
+  font-size: 0.8rem;
+}
+
 /* Cell phone friendly */
 @media screen and (max-width: 1000px) {
   /* hides overlapping things */
