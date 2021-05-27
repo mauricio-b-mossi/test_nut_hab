@@ -4,16 +4,19 @@ import axios from 'axios'
 
 const MailingList = () => {
     
-    const [email, setEmail] = useState(null)
+  const [email, setEmail] = useState(null)
+  const [showForm, setShowForm] = useState(true)
 
     const submitEmail = (e) => {
         e.preventDefault()
         
         if (email) {
             axios
-              .get(`http://localhost:5000/api/memberAdd?email=${email}`)
+              .get(
+                `https://nutriendohabitos.herokuapp.com/api/memberAdd?email=${email}`
+              )
               .then((res) => res.json())
-              .then((res) => console.log(res))
+              .then((res) => console.log(res)).then(setShowForm((current)=>!current))
               .catch((err) => console.log(err));
         }
 
@@ -42,19 +45,30 @@ const MailingList = () => {
           <div className="form_center">
             <form className="mailing_form" onSubmit={submitEmail}>
               <div className="mail_info">Subscribe to our news letter</div>
-              <input
-                className="mailing_input"
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <input type="submit" value="Sign Up" className="btn_primary" />
+              {showForm ? (
+                <>
+                  <input
+                    className="mailing_input"
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  <input
+                    type="submit"
+                    value="Sign Up"
+                    className="btn_primary"
+                  />
+                </>
+              )
+                : (
+                  <div className='mail_info'>{`Thank you ${email} for subscribing`}</div>
+                )}
             </form>
           </div>
           <div className="info_below">
             <div className="follow_us">
-              <div className='follow_us_footer'>Follow Us</div>
+              <div className="follow_us_footer">Follow Us</div>
               <a href="https://www.instagram.com/nutriendohabitos_sv/">
                 <img src="/images/insta_icon_transparent_blue.png" alt="" />
               </a>
