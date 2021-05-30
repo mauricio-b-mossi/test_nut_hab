@@ -1,10 +1,15 @@
 export default {
   name: "misionVision",
-  title: "Misión & Visión",
+  title: "Misión & Visión(Edit Only)",
   type: "document",
   fields: [
     {
       name: "title",
+      title: "Title(Won't appear in website)",
+      type: "string",
+    },
+    {
+      name: "fieldOne",
       title: "Title",
       type: "string",
     },
@@ -12,6 +17,11 @@ export default {
       name: "mission",
       title: "Edit Mission Body",
       type: "blockContent",
+    },
+    {
+      name: "fieldTwo",
+      title: "Title",
+      type: "string",
     },
     {
       name: "vision",

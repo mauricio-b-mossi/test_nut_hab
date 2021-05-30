@@ -1,6 +1,6 @@
 export default {
     name: "aboutUs",
-    title: "About Us",
+    title: "About Us(Edit Only)",
     type: "document",
     fields: [
         {
@@ -10,7 +10,7 @@ export default {
         },
         {
             name: 'subtitle',
-            title: 'Sub-Title',
+            title: 'Sub-Title(Optional)',
             type: 'string'
         },
         {

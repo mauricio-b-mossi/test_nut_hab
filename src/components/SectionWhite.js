@@ -16,7 +16,9 @@ const SectionWhite = () => {
     sanityClient
       .fetch(
         `*[_type == "misionVision"]{
+              fieldOne,
               mission,
+              fieldTwo,
               vision,
               mainImage{
                     asset->{
@@ -44,9 +46,11 @@ const SectionWhite = () => {
               <div className="width_wrapper">
                 {/* <div className="right_medium mision">Misión</div> */}
                 <div className="right_small">
+                  <h2 className="field_title">{misionVision.fieldOne}</h2>
                   <BlockContent blocks={misionVision.mission} />
                 </div>
                 <div className="right_small_below">
+                  <h2 className="field_title">{misionVision.fieldTwo}</h2>
                   <BlockContent blocks={misionVision.vision} />
                 </div>
                 {/* <div className="right_medium">Visión</div>

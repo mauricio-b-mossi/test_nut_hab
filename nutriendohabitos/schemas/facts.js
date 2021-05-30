@@ -5,7 +5,7 @@ export default {
   fields: [
     {
       name: "title",
-      title: "Fact title",
+      title: "Fact title(Won't appear in website)",
       type: "string",
     },
     {
