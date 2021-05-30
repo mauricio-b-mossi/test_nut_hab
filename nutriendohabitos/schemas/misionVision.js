@@ -9,8 +9,13 @@ export default {
       type: "string",
     },
     {
-      name: "body",
-      title: "Body",
+      name: "mission",
+      title: "Edit Mission Body",
+      type: "blockContent",
+    },
+    {
+      name: "vision",
+      title: "Edit Vision Body",
       type: "blockContent",
     },
     {

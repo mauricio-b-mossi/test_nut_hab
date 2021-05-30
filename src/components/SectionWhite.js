@@ -43,7 +43,10 @@ const SectionWhite = () => {
               <div className="width_wrapper">
                 {/* <div className="right_medium mision">Misión</div> */}
                 <div className="right_small">
-                  <BlockContent blocks={misionVision.body} />
+                  <BlockContent blocks={misionVision.mission} />
+                </div>
+                <div className="right_small">
+                  <BlockContent blocks={misionVision.vision} />
                 </div>
                 {/* <div className="right_medium">Visión</div>
                 <div className="right_small">
