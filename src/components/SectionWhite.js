@@ -16,7 +16,8 @@ const SectionWhite = () => {
     sanityClient
       .fetch(
         `*[_type == "misionVision"]{
-              body,
+              mission,
+              vision,
               mainImage{
                     asset->{
                         _id,
