@@ -46,7 +46,7 @@ const SectionWhite = () => {
                 <div className="right_small">
                   <BlockContent blocks={misionVision.mission} />
                 </div>
-                <div className="right_small">
+                <div className="right_small_below">
                   <BlockContent blocks={misionVision.vision} />
                 </div>
                 {/* <div className="right_medium">Visión</div>

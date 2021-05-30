@@ -262,6 +262,13 @@ nav {
   // align-items: center;
   // margin-bottom: 3rem;
 }
+.right_small_below{
+  padding:  0 5% 5% 5%;
+  font-size: $font_third;
+  line-height: 2rem;
+  font-family: $textFont;
+  flex-wrap: wrap;
+}
 
 .left_div{
   display: flex;
