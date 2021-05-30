@@ -76,7 +76,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/recetas" className="a_tag">
-              Recepies
+              Recipes
             </Link>
           </li>
           {/* <li>
