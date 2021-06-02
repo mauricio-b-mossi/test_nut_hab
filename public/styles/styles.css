@@ -228,6 +228,20 @@ nav {
   margin-bottom: 1rem;
 }
 
+.width_wrapper_wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5% auto 5%;
+      grid-template-columns: 5% auto 5%;
+      grid-template-areas: 'arrowR content arrowL';
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .right_small {
   padding: 5%;
   font-size: 1rem;
@@ -235,6 +249,34 @@ nav {
   font-family: "Quicksand", sans-serif;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.arrowL {
+  width: 8px;
+}
+
+.arrowL:hover {
+  cursor: pointer;
+}
+
+.arrowR {
+  width: 8px;
+}
+
+.arrowR:hover {
+  cursor: pointer;
+}
+
+.right_small_small {
+  padding: 5%;
+  font-size: 1rem;
+  line-height: 2rem;
+  font-family: "Quicksand", sans-serif;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: content;
 }
 
 .right_small_below {
@@ -293,8 +335,12 @@ nav {
   text-shadow: 2px 2px grey;
 }
 
+dl, ol, ul {
+  margin-bottom: 0%;
+}
+
 .section_white {
-  height: auto;
+  min-height: 400px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
@@ -552,6 +598,10 @@ nav {
   width: 100%;
 }
 
+.carousel_item {
+  max-height: 92vh;
+}
+
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -759,7 +809,7 @@ form div {
     max-width: 400px;
   }
   .nav-links {
-    position: absolute;
+    position: fixed;
     width: 100%;
     right: 0px;
     height: 92vh;
@@ -939,5 +989,9 @@ form div {
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
   overflow-y: hidden;
+}
+
+.slider-active {
+  display: none;
 }
 /*# sourceMappingURL=styles.css.map */

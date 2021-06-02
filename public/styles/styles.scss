@@ -256,12 +256,46 @@ nav {
   margin-bottom: 1rem;
 }
 
+.width_wrapper_wrapper{
+  display: grid;
+  grid-template-columns: 5% auto 5%;
+  grid-template-areas: 'arrowR content arrowL';
+  justify-content: center;
+  align-items: center;
+}
+
 .right_small{
   padding: 5%;
   font-size: $font_third;
   line-height: 2rem;
   font-family: $textFont;
   flex-wrap: wrap;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // margin-bottom: 3rem;
+}
+
+.arrowL{
+  width: 8px;
+}
+
+.arrowL:hover{
+  cursor: pointer;
+}
+.arrowR{
+  width: 8px;
+}
+.arrowR:hover{
+  cursor: pointer;
+}
+.right_small_small{
+  padding: 5%;
+  font-size: $font_third;
+  line-height: 2rem;
+  font-family: $textFont;
+  flex-wrap: wrap;
+  grid-area: content;
   // display: flex;
   // justify-content: center;
   // align-items: center;
@@ -318,13 +352,16 @@ nav {
 
 }
 
-
+dl, ol, ul{
+  margin-bottom: 0%;
+}
 
 // ABOUT US SECTION
 
 .section_white{
   // padding: 5rem;
-  height: auto;
+  min-height: 400px;
+  // height: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   align-items: center;
@@ -363,6 +400,7 @@ nav {
   padding: 0 5%;
   text-align: center;
 }
+
 
 .about_left_div div{
   font-family: $textFont;
@@ -547,6 +585,10 @@ nav {
   min-height: 92vh;
   width:  100%;
 }
+// SLIDER
+.carousel_item{
+  max-height: 92vh;
+}
 
 
 
@@ -717,7 +759,7 @@ form div{
 }
 
   .nav-links {
-    position: absolute;
+    position: fixed;
     width: 100%;
     right: 0px;
     height: 92vh;
@@ -881,6 +923,10 @@ form div{
 .nav-active {
   transform: translateX(0%);
   overflow-y: hidden;
+}
+
+.slider-active{
+  display: none;
 }
 
 

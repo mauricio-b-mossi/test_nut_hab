@@ -4,13 +4,17 @@ import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
 // To display images
 import imageUrlBuilder from "@sanity/image-url";
-import { Link } from "react-router-dom";
+import arrowL from '../images/arrowL.png'
+import arrowR from '../images/arrowR.png'
+import gsap from 'gsap'
+
 
 const SectionWhite = () => {
 
   const builder = imageUrlBuilder(sanityClient);
-
+  const [display, setDisplay] = useState(true)
   const [misionVision, setMisionVision] = useState(null)
+  
 
   useEffect(() => {
     sanityClient
@@ -35,7 +39,12 @@ const SectionWhite = () => {
   function urlFor(source) {
     return builder.image(source);
   }
+
+  function nextSlide() {
+    setDisplay((current)=>!current)
+  }
     
+  // gsap.from(".right_small_small", {duration: 1, opacity: 0, ease: 'bounce'});
 
   return (
     <>
@@ -44,19 +53,26 @@ const SectionWhite = () => {
           <div className="section_white">
             <div className="right_div">
               <div className="width_wrapper">
-                {/* <div className="right_medium mision">Misión</div> */}
-                <div className="right_small">
-                  <h2 className="field_title">{misionVision.fieldOne}</h2>
-                  <BlockContent blocks={misionVision.mission} />
-                </div>
-                <div className="right_small_below">
-                  <h2 className="field_title">{misionVision.fieldTwo}</h2>
-                  <BlockContent blocks={misionVision.vision} />
-                </div>
-                {/* <div className="right_medium">Visión</div>
+                <div className="width_wrapper_wrapper">
+                  <img src={arrowL} className="arrowL" />
+                  {display ? (
+                    <div className="right_small_small">
+                      <h2 className="field_title">{misionVision.fieldOne}</h2>
+                      <BlockContent blocks={misionVision.mission} />
+                    </div>
+                  ) : (
+                    <div className="right_small_small">
+                      <h2 className="field_title">{misionVision.fieldTwo}</h2>
+                      <BlockContent blocks={misionVision.vision} />
+                    </div>
+                  )}
+                  <img src={arrowR} className="arrowR" onClick={nextSlide}/>
+
+                  {/* <div className="right_medium">Visión</div>
                 <div className="right_small">
                   <BlockContent blocks={misionVision.vision} />
                 </div> */}
+                </div>
               </div>
             </div>
             <div className="left_div">

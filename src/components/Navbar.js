@@ -9,8 +9,13 @@ const Navbar = () => {
 
         const burger = document.querySelector(".burger");
         const nav = document.querySelector(".nav-links");
-        const navLinks = document.querySelectorAll(".nav-links li");
+      const navLinks = document.querySelectorAll(".nav-links li");
+      const slider = document.querySelector(".carousel_main");
+      
         //toggle nav
+      if (slider) {
+        slider.classList.toggle('slider-active')
+      }
         nav.classList.toggle("nav-active");
 
         //Animate Links
@@ -49,7 +54,6 @@ const Navbar = () => {
         
   }
   
-  const{isAdmin} = useContext(Context)
 
     return (
       <nav className="themainnav">
@@ -70,13 +74,18 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <a href="/articulos" className="a_tag">
+            <Link to="/articulos" className="a_tag">
               Articles
-            </a>
+            </Link>
           </li>
           <li>
             <Link to="/recetas" className="a_tag">
               Recipes
+            </Link>
+          </li>
+          <li>
+            <Link to="/achivements" className="a_tag">
+              Achievements
             </Link>
           </li>
           {/* <li>

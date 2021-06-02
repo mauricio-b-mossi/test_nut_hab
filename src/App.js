@@ -7,6 +7,7 @@ import Articles from './components/Articles'
 import OnePost from './components/OnePost'
 import Recepies from './components/Recepies'
 import MailingList from './components/MailingList'
+import Achievement from './components/Achievements'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <Route exact path="/articulos" component={Articles} />
       <Route exact path="/:slug" component={OnePost} />
       <Route exact path="/recetas" component={Recepies} />
+      <Route exact path="/achivements" component={Achievement} />
       <MailingList/>
         {/* <Footer /> */}
       
