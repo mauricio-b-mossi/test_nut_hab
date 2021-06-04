@@ -220,10 +220,6 @@ nav {
   margin-bottom: 2rem;
 }
 
-.mision {
-  margin-top: 2rem;
-}
-
 .center_mision_vision {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1070,7 +1066,7 @@ button, input, optgroup, select, textarea {
     width: 300px;
   }
   .carouselOG {
-    min-height: 120vh;
+    min-height: 638.39px;
   }
 }
 
