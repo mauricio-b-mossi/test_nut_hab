@@ -322,11 +322,11 @@ nav {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  min-height: 100vh;
+  min-height: 70vh;
 }
 
 .facts_height {
-  min-height: 100vh;
+  min-height: 70vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -355,7 +355,7 @@ nav {
   color: #f0f4fb;
   font-size: 2rem;
   text-align: center;
-  padding: 5rem;
+  padding: 5% 5% 5% 5%;
   text-shadow: 2px 2px grey;
 }
 
@@ -943,7 +943,7 @@ button, input, optgroup, select, textarea {
   }
   .healthy_bk {
     background-attachment: scroll;
-    min-height: 100vh;
+    min-height: 60vh;
   }
   .healthy_bk .diabetes_fact {
     height: auto;
@@ -1022,6 +1022,9 @@ button, input, optgroup, select, textarea {
   .site_container {
     max-width: 1156px;
   }
+  .carousel_item_bk p {
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (max-width: 960px) {
@@ -1046,6 +1049,9 @@ button, input, optgroup, select, textarea {
   }
   .mobileCarousel {
     display: block;
+  }
+  .diabetes_fact {
+    padding: 1rem;
   }
 }
 

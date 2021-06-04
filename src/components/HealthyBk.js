@@ -33,7 +33,7 @@ useEffect(() => {
     <>
       <div className="healthy_bk">
         <div className="diabetes_fact">
-          <Carousel className="carousel_main facts_height" >
+          <Carousel className="carousel_main facts_height" interval={50000}>
             {fact &&
               fact.map((ach, index) => (
                 <Carousel.Item className="carousel_item_bk">
