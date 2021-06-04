@@ -11,9 +11,12 @@ $font_secondary: 1.5rem;
 $font_third: 1rem;
 $textFont: 'Quicksand', sans-serif;
 
+// Killing BS
+
 
 // THE OG TRICK TO HIDE PHONE OVERFLOW
 html, body {
+  
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -221,6 +224,7 @@ nav {
   justify-content: center;
   align-items: center;
   width: 100%;
+  // min-height: 100vh;
   // max-width: 200px;
   // margin: 0rem 5rem 0 5rem;
   
@@ -301,6 +305,10 @@ nav {
   // align-items: center;
   // margin-bottom: 3rem;
 }
+
+.carousel-indicators li{
+  background-color: #6b82a7;
+}
 .right_small_below{
   padding:  0 5% 5% 5%;
   // padding: 5%;
@@ -350,6 +358,18 @@ nav {
   // text-shadow: 2px 2px #ff0000;
   text-shadow: 2px 2px grey;
 
+}
+
+.diabetes_fact .carousel-control-next, .carousel-control-prev{
+  opacity: 0;
+}
+
+.diabetes_fact .carousel-indicators li{
+  background-color: #6b82a7;
+}
+
+.carousel_item_bk{
+  height: auto;
 }
 
 dl, ol, ul{
@@ -585,9 +605,40 @@ dl, ol, ul{
   min-height: 92vh;
   width:  100%;
 }
+
+
 // SLIDER
+
+.carousel_wrapper{
+  display: grid;
+  align-items: center;
+  height: 92vh;
+}
+
+.mobileCarousel{
+  display: none;
+}
+
+.carousel-caption{
+  padding: 0%;
+}
+
+.center_info{
+  font-size: clamp(1rem, 1.333vw, 1.5rem);
+}
+
+.center_info h3{
+  
+}
 .carousel_item{
   max-height: 92vh;
+}
+.dark_bg{
+  background-color: black;
+}
+
+.img_darken{
+  filter: brightness(50%);
 }
 
 
@@ -740,6 +791,12 @@ form div{
   font-size: 0.8rem;
 }
 
+button, input, optgroup, select, textarea{
+  font-size: 0.8rem;
+  font-family: $font;
+  line-height: normal;
+}
+
 
 
 /* Cell phone friendly */
@@ -874,6 +931,17 @@ form div{
   }
  
 }
+@media screen and (max-width: 500px){
+  .compuCarousel{
+    display: none;
+  }
+  .carousel_wrapper{
+    display: none;
+  }
+  .mobileCarousel{
+    display: block;
+  }
+}
 
 @media screen and (max-width: 450px) {
   .right_div div{
@@ -929,4 +997,7 @@ form div{
   display: none;
 }
 
+.flow{
+  overflow-y: hidden;
+}
 

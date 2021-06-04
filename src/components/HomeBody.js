@@ -3,6 +3,7 @@ import Hero from './Hero'
 import SectionWhite from './SectionWhite'
 import HealthyBk from './HealthyBk'
 import SectionWhiteAbout from './SectionWhiteAbout'
+import Achievements from './Achievements'
 
 const HomeBody = () => {
     return (
@@ -10,6 +11,7 @@ const HomeBody = () => {
         <Hero />
         <SectionWhite />
         <HealthyBk />
+        {/* <Achievements/> */}
           <SectionWhiteAbout/>
       </>
     );

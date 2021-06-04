@@ -6,7 +6,8 @@ import BlockContent from "@sanity/block-content-to-react";
 import imageUrlBuilder from "@sanity/image-url";
 import arrowL from '../images/arrowL.png'
 import arrowR from '../images/arrowR.png'
-import gsap from 'gsap'
+import { Carousel } from "react-bootstrap";
+
 
 
 const SectionWhite = () => {
@@ -43,6 +44,10 @@ const SectionWhite = () => {
   function nextSlide() {
     setDisplay((current)=>!current)
   }
+
+  const mision = document.querySelector('.right_small_small')
+  
+  
     
   // gsap.from(".right_small_small", {duration: 1, opacity: 0, ease: 'bounce'});
 
@@ -53,8 +58,23 @@ const SectionWhite = () => {
           <div className="section_white">
             <div className="right_div">
               <div className="width_wrapper">
-                <div className="width_wrapper_wrapper">
-                  <img src={arrowL} className="arrowL" />
+                {/* <div className="width_wrapper_wrapper"> */}
+                <Carousel style={{ minHeight: "70vh" }} interval='50000'>
+                  <Carousel.Item>
+                    <div className="right_small_small mision">
+                      <h2 className="field_title">{misionVision.fieldOne}</h2>
+                      <BlockContent blocks={misionVision.mission} />
+                    </div>
+                  </Carousel.Item>
+                  <Carousel.Item>
+                    <div className="right_small_small">
+                      <h2 className="field_title">{misionVision.fieldTwo}</h2>
+                      <BlockContent blocks={misionVision.vision} />
+                    </div>
+                  </Carousel.Item>
+                </Carousel>
+
+                {/* <img src={arrowL} className="arrowL" />
                   {display ? (
                     <div className="right_small_small">
                       <h2 className="field_title">{misionVision.fieldOne}</h2>
@@ -66,13 +86,13 @@ const SectionWhite = () => {
                       <BlockContent blocks={misionVision.vision} />
                     </div>
                   )}
-                  <img src={arrowR} className="arrowR" onClick={nextSlide}/>
+                  <img src={arrowR} className="arrowR" onClick={nextSlide}/> */}
 
-                  {/* <div className="right_medium">Visión</div>
+                {/* <div className="right_medium">Visión</div>
                 <div className="right_small">
                   <BlockContent blocks={misionVision.vision} />
                 </div> */}
-                </div>
+                {/* </div> */}
               </div>
             </div>
             <div className="left_div">

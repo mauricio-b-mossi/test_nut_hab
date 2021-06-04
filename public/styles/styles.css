@@ -279,6 +279,10 @@ nav {
   grid-area: content;
 }
 
+.carousel-indicators li {
+  background-color: #6b82a7;
+}
+
 .right_small_below {
   padding: 0 5% 5% 5%;
   font-size: 1rem;
@@ -333,6 +337,18 @@ nav {
   height: 60vh;
   padding: 5rem;
   text-shadow: 2px 2px grey;
+}
+
+.diabetes_fact .carousel-control-next, .carousel-control-prev {
+  opacity: 0;
+}
+
+.diabetes_fact .carousel-indicators li {
+  background-color: #6b82a7;
+}
+
+.carousel_item_bk {
+  height: auto;
 }
 
 dl, ol, ul {
@@ -598,8 +614,38 @@ dl, ol, ul {
   width: 100%;
 }
 
+.carousel_wrapper {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 92vh;
+}
+
+.mobileCarousel {
+  display: none;
+}
+
+.carousel-caption {
+  padding: 0%;
+}
+
+.center_info {
+  font-size: clamp(1rem, 1.333vw, 1.5rem);
+}
+
 .carousel_item {
   max-height: 92vh;
+}
+
+.dark_bg {
+  background-color: black;
+}
+
+.img_darken {
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
 }
 
 .footer {
@@ -799,6 +845,12 @@ form div {
   font-size: 0.8rem;
 }
 
+button, input, optgroup, select, textarea {
+  font-size: 0.8rem;
+  font-family: "Roboto", sans-serif;
+  line-height: normal;
+}
+
 /* Cell phone friendly */
 @media screen and (max-width: 1000px) {
   /* hides overlapping things */
@@ -952,6 +1004,18 @@ form div {
   }
 }
 
+@media screen and (max-width: 500px) {
+  .compuCarousel {
+    display: none;
+  }
+  .carousel_wrapper {
+    display: none;
+  }
+  .mobileCarousel {
+    display: block;
+  }
+}
+
 @media screen and (max-width: 450px) {
   .right_div div {
     max-width: 300px;
@@ -993,5 +1057,9 @@ form div {
 
 .slider-active {
   display: none;
+}
+
+.flow {
+  overflow-y: hidden;
 }
 /*# sourceMappingURL=styles.css.map */

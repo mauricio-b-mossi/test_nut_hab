@@ -11,8 +11,15 @@ const Navbar = () => {
         const nav = document.querySelector(".nav-links");
       const navLinks = document.querySelectorAll(".nav-links li");
       const slider = document.querySelector(".carousel_main");
+      const mobil = document.querySelector(".mobileCarousel");
+      const screen = document.querySelector('html')
+
+      screen.classList.toggle('flow')
       
         //toggle nav
+      if (mobil) {
+        mobil.classList.toggle('slider-active')
+      }
       if (slider) {
         slider.classList.toggle('slider-active')
       }
@@ -53,6 +60,17 @@ const Navbar = () => {
         burger.classList.toggle("toggle");
         
   }
+
+  const hideCarousel = () => {
+    const slider = document.querySelector(".carousel_main");
+    const screen = document.querySelector("html");
+
+    //toggle nav
+    if (slider) {
+      slider.classList.remove("slider-active");
+    }
+    screen.classList.remove("flow");
+  }
   
 
     return (
@@ -69,22 +87,22 @@ const Navbar = () => {
         </div>
         <ul className="nav-links" onClick={hideNav}>
           <li>
-            <Link to="/" className="a_tag">
+            <Link to="/" className="a_tag" onClick={hideCarousel}>
               Home
             </Link>
           </li>
           <li>
-            <Link to="/articulos" className="a_tag">
+            <Link to="/articulos" className="a_tag" onClick={hideCarousel}>
               Articles
             </Link>
           </li>
           <li>
-            <Link to="/recetas" className="a_tag">
+            <Link to="/recetas" className="a_tag" onClick={hideCarousel}>
               Recipes
             </Link>
           </li>
           <li>
-            <Link to="/achivements" className="a_tag">
+            <Link to="/achivements" className="a_tag" onClick={hideCarousel}>
               Achievements
             </Link>
           </li>

@@ -1,9 +1,16 @@
 import React, {useState, useEffect} from 'react'
-import {Carousel} from 'react-bootstrap'
+import { Carousel } from 'react-bootstrap'
+import sanityClient from "../client.js";
+// To display markdown
+import BlockContent from "@sanity/block-content-to-react";
+// To display images
+import imageUrlBuilder from "@sanity/image-url";
 
 
 
 const Achievements = () => {
+
+  const builder = imageUrlBuilder(sanityClient);
     // const [width, setWidth] = useState(null)
 
     // const slider = document.querySelector(".carousel_main");
@@ -22,68 +29,125 @@ const Achievements = () => {
     // window.addEventListener('resize', size)
 //   const builder = imageUrlBuilder(sanityClient);
 
-//   const [achievement, setAchievement] = useState(null);
+  const [achievement, setAchievement] = useState(null);
+  const [mobile, setMobile] = useState(null)
 
-//     useEffect(() => {
-//       sanityClient
-//         .fetch(
-//           `*[_type == "achievement"]{
-//               fieldOne,
-//               mission,
-//               fieldTwo,
-//               vision,
-//               mainImage{
-//                     asset->{
-//                         _id,
-//                         url
-//                     },
-//                 },
-//       }`
-//         )
-//         .then((data) => setMisionVision(data[0]))
-//         .catch(console.error);
-//     }, []);
-
+    useEffect(() => {
+      sanityClient
+        .fetch(
+          `*[_type == "achievements"]{
+              title,
+              body,
+              mainImage{
+                    asset->{
+                        _id,
+                        url
+                    },
+                },
+      }`
+        )
+        .then((data) => setAchievement(data))
+        .catch(console.error);
+    }, []);
+    useEffect(() => {
+      sanityClient
+        .fetch(
+          `*[_type == "achievements_mobile"]{
+              title,
+              body,
+              mainImage{
+                    asset->{
+                        _id,
+                        url
+                    },
+                },
+      }`
+        )
+        .then((data) => setMobile(data))
+        .catch(console.error);
+    }, []);
+  
+  function urlFor(source) {
+    return builder.image(source);
+  }
+  
+  if (!achievement) {
     return (
-      <Carousel className="carousel_main">
-        <Carousel.Item className="carousel_item">
-          <img
-            className="d-flex w-100"
-            src="https://th.bing.com/th/id/R5b90d3cab4c93cc1f47b3d31807a0f99?rik=yMn59TeeZI80YQ&riu=http%3a%2f%2fmedia.idownloadblog.com%2fwp-content%2fuploads%2f2016%2f04%2fblack-screen.png&ehk=RxV1EICkEx5hI0FQBlLKLvKlxHWlhizf2AqbxVit4cw%3d&risl=&pid=ImgRaw"
-            alt="First slide"
-          />
-          <Carousel.Caption className="center_info">
-            <h3>First slide label</h3>
-            <p>Lorem ipsum dolor sit amet co Lorem ipsum, dolor sit amet</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item className="carousel_item">
-          <img
-            className="d-block w-100"
-            src="https://th.bing.com/th/id/Rf064c63ec4e26c876f55395bbecfaf53?rik=UW6NSRJfqFJymg&riu=http%3a%2f%2fimages2.fanpop.com%2fimage%2fphotos%2f8600000%2frandom-animals-animals-8676039-1600-1200.jpg&ehk=6tjcye1UD%2fllXsU8RkEf%2b%2flTWJe2QD5D%2fvkatzMqPG0%3d&risl=&pid=ImgRaw"
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item className="carousel_item">
-          <img
-            className="d-block w-100"
-            src="https://th.bing.com/th/id/Rf94d57987fe736de650020597fab9685?rik=9DBdZaX9GUW8NQ&riu=http%3a%2f%2fimages2.fanpop.com%2fimages%2fphotos%2f5900000%2fRandomness-random-5997130-1280-800.jpg&ehk=%2bJHDAdwADmFcwPe9iALSSqZpQeCmGVB0MG5gujSvPzY%3d&risl=&pid=ImgRaw"
-            alt="First slide"
-          />
-
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
+      <div
+        style={{
+          height: "92vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      ></div>
     );
+  }
+
+  return (
+    <>
+      <div className="carousel_wrapper">
+        <Carousel className="carousel_main compuCarousel">
+          {achievement &&
+            achievement.map((ach, index) => (
+              <Carousel.Item className="carousel_item">
+                <img
+                  className="d-flex w-100 img_darken"
+                  src={urlFor(ach.mainImage.asset.url).size(640, 360)}
+                  alt="First slide"
+                />
+                <Carousel.Caption className="center_info">
+                  <h3>{ach.title}</h3>
+                  <p>
+                    <BlockContent blocks={ach.body} />
+                  </p>
+                </Carousel.Caption>
+              </Carousel.Item>
+            ))}
+        </Carousel>
+      </div>
+
+      <Carousel className="carousel_main mobileCarousel">
+        {achievement &&
+          achievement.map((ach, index) => (
+            <Carousel.Item className="carousel_item">
+              <img
+                className="d-flex w-100 img_darken"
+                src={urlFor(ach.mainImage.asset.url).size(1080, 1920)}
+                alt="First slide"
+              />
+              <Carousel.Caption className="center_info">
+                <h3>{ach.title}</h3>
+                <p>
+                  <BlockContent blocks={ach.body} />
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          ))}
+      </Carousel>
+
+      {/* <div className='no_show'>
+        <Carousel className="carousel_main">
+          {achievement &&
+            achievement.map((ach, index) => (
+              <Carousel.Item className="carousel_item">
+                <img
+                  className="d-flex w-100 img_darken"
+                  src={urlFor(ach.mainImage.asset.url).size(640, 360)}
+                  alt="First slide"
+                />
+                <Carousel.Caption className="center_info">
+                  <h3>{ach.title}</h3>
+                  <p>
+                    <BlockContent blocks={ach.body} />
+                  </p>
+                </Carousel.Caption>
+              </Carousel.Item>
+            ))}
+        </Carousel>
+      </div> */}
+    </>
+  );
 }
 
 export default Achievements

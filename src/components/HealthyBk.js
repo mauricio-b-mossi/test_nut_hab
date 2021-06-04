@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import sanityClient from "../client.js";
 // To display markdown
 import BlockContent from "@sanity/block-content-to-react";
+import { Carousel } from "react-bootstrap";
 
 
 const HealthyBk = () => {
@@ -32,8 +33,17 @@ useEffect(() => {
     <>
       <div className="healthy_bk">
         <div className="diabetes_fact">
+          <Carousel className="carousel_main">
+            {fact &&
+              fact.map((ach, index) => (
+                <Carousel.Item className="carousel_item_bk">
+                  <BlockContent blocks={ach.body} />
+                </Carousel.Item>
+              ))}
+          </Carousel>
+
           {/* Random fact from the db */}
-          {fact ? (
+          {/* {fact ? (
             <div>
               <BlockContent
                 blocks={fact[Math.floor(Math.random() * fact.length)].body}
@@ -41,7 +51,7 @@ useEffect(() => {
             </div>
           ) : (
             <div></div>
-          )}
+          )} */}
         </div>
       </div>
     </>
