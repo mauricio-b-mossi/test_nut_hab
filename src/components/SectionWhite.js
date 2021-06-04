@@ -58,21 +58,24 @@ const SectionWhite = () => {
           <div className="section_white">
             <div className="right_div">
               <div className="width_wrapper">
-                {/* <div className="width_wrapper_wrapper"> */}
-                <Carousel style={{ minHeight: "70vh" }} interval='50000'>
-                  <Carousel.Item>
-                    <div className="right_small_small mision">
-                      <h2 className="field_title">{misionVision.fieldOne}</h2>
-                      <BlockContent blocks={misionVision.mission} />
-                    </div>
-                  </Carousel.Item>
-                  <Carousel.Item>
-                    <div className="right_small_small">
-                      <h2 className="field_title">{misionVision.fieldTwo}</h2>
-                      <BlockContent blocks={misionVision.vision} />
-                    </div>
-                  </Carousel.Item>
-                </Carousel>
+                <div className="center_mision_vision">
+                  {/* <div className="width_wrapper_wrapper"> */}
+                  <Carousel interval="50000" className='carouselOG' >
+                    <Carousel.Item>
+                      <div className="right_small_small mision">
+                        <h2 className="field_title">{misionVision.fieldOne}</h2>
+                        <BlockContent blocks={misionVision.mission} />
+                      </div>
+                    </Carousel.Item>
+
+                    <Carousel.Item>
+                      <div className="right_small_small">
+                        <h2 className="field_title">{misionVision.fieldTwo}</h2>
+                        <BlockContent blocks={misionVision.vision} />
+                      </div>
+                    </Carousel.Item>
+                  </Carousel>
+                </div>
 
                 {/* <img src={arrowL} className="arrowL" />
                   {display ? (

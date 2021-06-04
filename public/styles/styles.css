@@ -224,6 +224,18 @@ nav {
   margin-top: 2rem;
 }
 
+.center_mision_vision {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .field_title {
   margin-bottom: 1rem;
 }
@@ -310,11 +322,24 @@ nav {
 
 .healthy_bk {
   opacity: 1;
-  height: 60vh;
   background-image: url("/images/light blue paper strip.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.facts_height {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .healthy_bk .diabetes_fact {
@@ -334,7 +359,6 @@ nav {
   color: #f0f4fb;
   font-size: 2rem;
   text-align: center;
-  height: 60vh;
   padding: 5rem;
   text-shadow: 2px 2px grey;
 }
@@ -621,6 +645,19 @@ dl, ol, ul {
       -ms-flex-align: center;
           align-items: center;
   height: 92vh;
+}
+
+.carouselOG {
+  min-height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .mobileCarousel {
@@ -910,7 +947,7 @@ button, input, optgroup, select, textarea {
   }
   .healthy_bk {
     background-attachment: scroll;
-    height: auto;
+    min-height: 100vh;
   }
   .healthy_bk .diabetes_fact {
     height: auto;
@@ -1031,6 +1068,9 @@ button, input, optgroup, select, textarea {
   }
   .about_right_div img {
     width: 300px;
+  }
+  .carouselOG {
+    min-height: 120vh;
   }
 }
 
