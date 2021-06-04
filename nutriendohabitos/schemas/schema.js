@@ -12,6 +12,8 @@ import aboutUs from './aboutUs'
 import misionVision from './misionVision'
 import recepies from './recepies'
 import facts from './facts'
+import achievements from './achievements'
+import mobileachievements from './achievementsmovil'
 
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -29,6 +31,8 @@ export default createSchema({
     misionVision,
     recepies,
     facts,
+    achievements,
+    mobileachievements,
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

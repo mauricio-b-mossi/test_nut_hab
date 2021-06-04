@@ -1,6 +1,6 @@
 export default {
-  name: "achievements",
-  title: "Achievements (Big screen)",
+  name: "achievements_mobile",
+  title: "Achievements (Instagram story size)",
   type: "document",
   fields: [
     {
