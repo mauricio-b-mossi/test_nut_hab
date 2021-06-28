@@ -59,7 +59,13 @@ const OnePost = () => {
                   />
                   <div className="text_center">
                     <div className="about_left_small_one">
-                      <BlockContent blocks={post.body} className="post_body" />
+                      <BlockContent
+                        blocks={post.body}
+                        imageOptions={{width: 600, h: 600, fit: 'max'}}
+                        projectId={sanityClient.clientConfig.projectId}
+                        dataset={sanityClient.clientConfig.dataset}
+                        className="post_body" 
+                      />
                     </div>
                   </div>
                 </div>

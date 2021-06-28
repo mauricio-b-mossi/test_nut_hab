@@ -558,9 +558,16 @@ dl, ol, ul {
   color: black;
   font-size: 1rem;
   margin: 2rem 0;
-  text-align: start;
   line-height: 2rem;
   font-family: "Quicksand", sans-serif;
+}
+
+.post_body p {
+  text-align: start;
+}
+
+.post_body img {
+  text-align: center;
 }
 
 .text_center {
@@ -893,6 +900,9 @@ button, input, optgroup, select, textarea {
   .img_article_size {
     max-width: 400px;
   }
+  .post_body img {
+    max-width: 400px;
+  }
   .nav-links {
     position: fixed;
     width: 100%;
@@ -1065,6 +1075,9 @@ button, input, optgroup, select, textarea {
   .img_article_size {
     max-width: 300px;
   }
+  .post_body img {
+    max-width: 300px;
+  }
   .img_logo {
     margin: 0;
   }
@@ -1087,6 +1100,9 @@ button, input, optgroup, select, textarea {
     max-width: 250px;
   }
   .img_article_size {
+    max-width: 250px;
+  }
+  .post_body img {
     max-width: 250px;
   }
 }
